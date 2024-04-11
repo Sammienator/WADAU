@@ -8,11 +8,13 @@ import Step from './components/Step'
 import Team from './components/Team'
 import Testimonial from './components/Testimonial';
 import Footer from './components/Footer';
+import Before from './components/Before';
 
 function App() {
   return (
     <div className="App">
     <Header/>
+    <Before/>
     <Hero/>
     <About/>
     <Stat/>
