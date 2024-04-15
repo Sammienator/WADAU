@@ -1,4 +1,6 @@
 import React from 'react'
+import test1 from '../assets/test1.jpg'
+import test2 from '../assets/test2.jpg'
 
 const Team = () => {
   return (
@@ -11,7 +13,7 @@ const Team = () => {
     <div class="flex flex-wrap -m-4">
       <div class="p-4 lg:w-1/4 md:w-1/2">
         <div class="h-full flex flex-col items-center text-center">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/200x200" />
+          <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src={test1} />
           <div class="w-full">
             <h2 class="title-font font-medium text-lg text-gray-900">Alper Kamu</h2>
             <h3 class="text-gray-500 mb-3">UI Developer</h3>
@@ -38,7 +40,7 @@ const Team = () => {
       </div>
       <div class="p-4 lg:w-1/4 md:w-1/2">
         <div class="h-full flex flex-col items-center text-center">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/201x201"/>
+          <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"  src={test2} />
           <div class="w-full">
             <h2 class="title-font font-medium text-lg text-gray-900">Holden Caulfield</h2>
             <h3 class="text-gray-500 mb-3">UI Developer</h3>
@@ -65,7 +67,7 @@ const Team = () => {
       </div>
       <div class="p-4 lg:w-1/4 md:w-1/2">
         <div class="h-full flex flex-col items-center text-center">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/202x202" />
+          <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src={test1} />
           <div class="w-full">
             <h2 class="title-font font-medium text-lg text-gray-900">Atticus Finch</h2>
             <h3 class="text-gray-500 mb-3">UI Developer</h3>
@@ -92,7 +94,7 @@ const Team = () => {
       </div>
       <div class="p-4 lg:w-1/4 md:w-1/2">
         <div class="h-full flex flex-col items-center text-center">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/203x203 " />
+          <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src={test2} />
           <div class="w-full">
             <h2 class="title-font font-medium text-lg text-gray-900">Henry Letham</h2>
             <h3 class="text-gray-500 mb-3">UI Developer</h3>
