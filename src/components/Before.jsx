@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import pic9 from '../assets/pic9.jpg'
 import pic10 from '../assets/pic10.jpg'
 import pic8 from '../assets/pic8.jpg'
 
 const Before = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     
-    <section class="py-10 dark:bg-dark">
+    <section class="py-10 dark:bg-dark ">
       <div class="container mx-auto">
         <div class="-mx-4 flex flex-wrap">
-          <div class="w-full px-4 lg:w-8/12 ">
+          <div data-aos="fade-down" data-aos-duration="3000"  class="w-full px-4 lg:w-8/12 ">
             <div class="relative mb-8 h-[370px] md:h-[480px] shadow-xl">
               <img src={pic10} alt="product" class="h-full w-full object-cover object-center "/>
 
@@ -31,7 +36,7 @@ const Before = () => {
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-4/12">
+          <div data-aos="fade-left" data-aos-duration="3000" data-aos-delay="300" class="w-full px-4 lg:w-4/12">
             <div class="-mx-4 flex flex-wrap">
               <div class="w-full px-4 md:w-1/2 lg:w-full">
                 <div class="relative mb-8 h-[223px] shadow-xl">
@@ -51,7 +56,7 @@ const Before = () => {
                   </div>
                 </div>
               </div>
-              <div class="w-full px-4 md:w-1/2 lg:w-full">
+              <div data-aos="fade-left" data-aos-duration="3000" data-aos-delay="600"class="w-full px-4 md:w-1/2 lg:w-full">
                 <div class="relative mb-8 h-[223px] shadow-xl">
                   <img src={pic8} alt="product" class="h-full w-full object-cover object-center"/>
 
