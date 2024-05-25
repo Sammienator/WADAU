@@ -9,7 +9,7 @@ import Team from './components/Team'
 import Testimonial from './components/Testimonial';
 import Footer from './components/Footer';
 import Before from './components/Before';
-import Overlee from './components/overlay';
+
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
     <Before/>
     <Hero/>
     <About/>
-    <Overlee/>
+    
     <Stat/>
     <Step/>
     <Team/>

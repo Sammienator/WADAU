@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section class="text-gray-600  body-font">
   <div class="container px-5 py-24 mx-auto">
-    <div class="text-center mb-20">
+    <div data-aos="zoom-in-up" data-aos-duration="2000"   class="text-center mb-20">
       <h1 class="sm:text-3xl text-2xl font-medium title-font text-black mb-4">What Wadau Music Represents.</h1>
       <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">Wadau Music Group represents a harmonious blend of cultural heritage, artistic expression, and community connection. Wadau Music Group serves as a living repository of Kenya’s cultural heritage. Wadau Music Group is more than notes on a staff; it’s an emotional journey.Wadau Music Group isn’t confined to concert halls; it spills into markets, village squares, and digital spaces.</p>
       <div class="flex mt-6 justify-center">
@@ -13,7 +13,7 @@ const About = () => {
       </div>
     </div>
     <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
-      <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+      <div data-aos="zoom-in-right" data-aos-duration="3000" data-aos-delay="400"  class="p-4 md:w-1/3 flex flex-col text-center items-center">
         <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-black mb-5 flex-shrink-0">
           {/* <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
@@ -40,7 +40,7 @@ Whether composing original songs or reimagining traditional tunes, your artistry
           </a>
         </div>
       </div>
-      <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+      <div data-aos="zoom-in-down" data-aos-duration="3000" data-aos-delay="400"  class="p-4 md:w-1/3 flex flex-col text-center items-center">
         <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-black mb-5 flex-shrink-0">
           {/* <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
             <circle cx="6" cy="6" r="3"></circle>
@@ -72,13 +72,16 @@ Through our music, we honor the ancestral wisdom, rituals, and celebrations that
           </a>
         </div>
       </div>
-      <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+      <div data-aos="zoom-in-left" data-aos-duration="3000" data-aos-delay="400"  class="p-4 md:w-1/3 flex flex-col text-center items-center">
         <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-black mb-5 flex-shrink-0">
           {/* <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
             <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg> */}
 
+<svg class=" text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M3 21h18M4 18h16M6 10v8m4-8v8m4-8v8m4-8v8M4 9.5v-.955a1 1 0 0 1 .458-.84l7-4.52a1 1 0 0 1 1.084 0l7 4.52a1 1 0 0 1 .458.84V9.5a.5.5 0 0 1-.5.5h-15a.5.5 0 0 1-.5-.5Z"/>
+</svg>
 
 
         </div>
