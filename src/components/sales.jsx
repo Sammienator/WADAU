@@ -2,22 +2,17 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 
 const SalesSection = () => {
-
-   const [selectedItems, setSelectedItems] = useState([]);
+  const [selectedItems, setSelectedItems] = useState([]);
   const [total, setTotal] = useState(0);
   const [formVisible, setFormVisible] = useState(false);
-
-
-
-  // Form data state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     location: '',
     transactionCode: ''
   });
-
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
 
   const items = [
     { id: 1, name: 'Merchandise Pack', price: 3000 },
@@ -26,35 +21,58 @@ const SalesSection = () => {
   ];
 
   const handleSelect = (item) => {
-    if (!selectedItems.includes(item.id)) {
-      setSelectedItems([...selectedItems, item.id]);
-      setTotal(total + item.price);
-    } else {
-      setSelectedItems(selectedItems.filter(id => id !== item.id));
-      setTotal(total - item.price);
-    }
+    const isSelected = selectedItems.includes(item.id);
+    const updatedItems = isSelected
+      ? selectedItems.filter(id => id !== item.id)
+      : [...selectedItems, item.id];
+
+    const updatedTotal = isSelected
+      ? total - item.price
+      : total + item.price;
+
+    setSelectedItems(updatedItems);
+    setTotal(updatedTotal);
   };
 
   const handleSubmit = () => {
     alert(`Please pay Kshs ${total} via MPESA to 0743794470`);
     setFormVisible(true);
   };
+
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    
-    emailjs.send('service_94b8hfq', 'template_24zts0o', formData, '1n4kYZP7pVBzRQ71v')
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        alert('Order submitted successfully!');
-      }, (error) => {
-        console.log('FAILED...', error);
-        alert('Failed to submit order. Please try again.');
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        { ...formData, total },
+        process.env.REACT_APP_EMAILJS_USER_ID
+      );
+      console.log('SUCCESS!', response.status, response.text);
+      alert('Order submitted successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        location: '',
+        transactionCode: ''
       });
+      setSelectedItems([]);
+      setTotal(0);
+      setFormVisible(false);
+    } catch (error) {
+      console.error('FAILED...', error);
+      setError('Failed to submit order. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -133,12 +151,21 @@ const SalesSection = () => {
                 required
               />
             </div>
-            <button type="submit" className="mt-2 px-4 py-2 bg-green-500 text-white rounded">Submit</button>
+            <button type="submit" className="mt-2 px-4 py-2 bg-green-500 text-white rounded" disabled={isSubmitting}>
+              {isSubmitting ? 'Submitting...' : 'Submit'}
+            </button>
+            {error && <p className="text-red-500 mt-2">{error}</p>}
           </form>
         </div>
       )}
     </div>
   );
 };
+
+
+console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID);
+console.log(process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
+console.log(process.env.REACT_APP_EMAILJS_USER_ID);
+
 
 export default SalesSection;
