@@ -9,7 +9,8 @@ const SalesSection = () => {
     name: '',
     email: '',
     location: '',
-    transactionCode: ''
+    transactionCode: '',
+    selectedItems: []
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
@@ -48,12 +49,18 @@ const SalesSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
-
+  
+    const selectedItemsNames = selectedItems
+      .map(itemId => items.find(item => item.id === itemId).name)
+      .join(', ');
+  
+    const formDataWithItems = { ...formData, selectedItems: selectedItemsNames, total };
+  
     try {
       const response = await emailjs.send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        { ...formData, total },
+        formDataWithItems,
         process.env.REACT_APP_EMAILJS_USER_ID
       );
       console.log('SUCCESS!', response.status, response.text);
@@ -62,7 +69,8 @@ const SalesSection = () => {
         name: '',
         email: '',
         location: '',
-        transactionCode: ''
+        transactionCode: '',
+        selectedItems: []
       });
       setSelectedItems([]);
       setTotal(0);
@@ -74,6 +82,7 @@ const SalesSection = () => {
       setIsSubmitting(false);
     }
   };
+  
 
   return (
     <div className="sales-section p-4" data-aos="fade-up">
