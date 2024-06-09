@@ -85,8 +85,8 @@ const SalesSection = () => {
   
 
   return (
-    <div className="sales-section p-4" data-aos="fade-up">
-      <h2 className="text-2xl font-bold mb-4">Sales Section</h2>
+    <div id='sales' className="sales-section p-4" data-aos="fade-up">
+      <h2 className="text-2xl font-bold mb-4">Support Wadau Music</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {items.map(item => (
           <div key={item.id} className="border p-4 rounded-lg">

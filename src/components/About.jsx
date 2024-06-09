@@ -3,7 +3,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <section class="text-gray-600  body-font">
+    <section id='about' class="text-gray-600  body-font">
   <div class="container px-5 py-24 mx-auto">
     <div data-aos="zoom-in-up" data-aos-duration="2000"   class="text-center mb-20">
       <h1 class="sm:text-3xl text-2xl font-medium title-font text-black mb-4">What Wadau Music Represents.</h1>
